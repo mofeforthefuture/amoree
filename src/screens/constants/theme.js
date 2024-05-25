@@ -8,6 +8,7 @@ export const SIZES = {
   height,
 };
 
-const appTheme = {SIZES};
-
-export default appTheme;
+export const COLORS = {
+  white: '#FFFFFF',
+  gradient: ['rgba(0,0,0, 0.7)', 'rgba(255,255,255, 0)', 'rgba(0,0,0, 0.7)'],
+};

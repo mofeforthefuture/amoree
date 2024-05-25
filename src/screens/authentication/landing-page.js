@@ -1,8 +1,9 @@
 import React from 'react';
-import {ImageBackground, StyleSheet, View} from 'react-native';
+import {ImageBackground, StyleSheet} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 import images from '../../assets/images';
-import {SIZES} from '../constants/theme';
+import {SIZES, COLORS} from '../constants/theme';
 
 export default function LandingPage() {
   return (
@@ -10,7 +11,9 @@ export default function LandingPage() {
       style={styles.image}
       source={images.landing}
       resizeMode="contain">
-      <View style={styles.innerContainer}></View>
+      <LinearGradient
+        style={styles.innerContainer}
+        colors={COLORS.gradient}></LinearGradient>
     </ImageBackground>
   );
 }
@@ -29,7 +32,5 @@ const styles = StyleSheet.create({
   },
   innerContainer: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0, 0.2)',
-    paddingTop: SIZES.height * 0.3,
   },
 });
