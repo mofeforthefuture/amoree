@@ -9,9 +9,6 @@ const {Navigator, Screen} = createNativeStackNavigator();
 
 export default function App() {
   useEffect(() => {
-    console.log('====================================');
-    console.log('ge');
-    console.log('====================================');
     SplashScreen.hide(); //to ensure the javascript loads completely and avoid the brief white screen
   }, []);
 
