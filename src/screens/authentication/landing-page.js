@@ -4,6 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import images from '../../assets/images';
 import {SIZES, COLORS} from '../constants/theme';
+import {LogoWhite} from '../../components';
 
 export default function LandingPage() {
   return (
@@ -11,9 +12,9 @@ export default function LandingPage() {
       style={styles.image}
       source={images.landing}
       resizeMode="contain">
-      <LinearGradient
-        style={styles.innerContainer}
-        colors={COLORS.gradient}></LinearGradient>
+      <LinearGradient style={styles.innerContainer} colors={COLORS.gradient}>
+        <LogoWhite />
+      </LinearGradient>
     </ImageBackground>
   );
 }
@@ -24,13 +25,9 @@ const styles = StyleSheet.create({
     height: SIZES.height,
     justifyContent: 'center',
   },
-  container: {
-    width: SIZES.width * 0.8,
-    alignSelf: 'center',
-    alignItems: 'center',
-    paddingTop: SIZES.height * 0.3,
-  },
   innerContainer: {
     flex: 1,
+    paddingTop: SIZES.height * 0.2,
+    alignItems: 'center',
   },
 });
