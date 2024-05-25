@@ -23,7 +23,11 @@ export default function LandingPage() {
             label={'Create account'}
             onPress={() => navigation.navigate('Signup')}
           />
-          <Link text={'Log In'} color={COLORS.white} />
+          <Link
+            onPress={() => navigation.navigate('Login')}
+            text={'Log In'}
+            color={COLORS.white}
+          />
         </View>
       </LinearGradient>
     </ImageBackground>
