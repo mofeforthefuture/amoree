@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   logo: {
     width: SIZES.width * 0.9,
     resizeMode: 'contain',
-    height: 55,
+    height: 57,
   },
   tagline: {
     color: COLORS.white,

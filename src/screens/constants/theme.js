@@ -10,5 +10,7 @@ export const SIZES = {
 
 export const COLORS = {
   white: '#FFFFFF',
-  gradient: ['rgba(0,0,0, 0.7)', 'rgba(255,255,255, 0)', 'rgba(0,0,0, 0.7)'],
+  black: '#000000',
+  disabled: '#717171',
+  gradient: ['rgba(0,0,0, 0.7)', 'rgba(255,255,255, 0)', 'rgba(0,0,0,0.8)'],
 };

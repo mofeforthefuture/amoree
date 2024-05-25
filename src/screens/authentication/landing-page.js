@@ -1,10 +1,10 @@
 import React from 'react';
-import {ImageBackground, StyleSheet} from 'react-native';
+import {ImageBackground, StyleSheet, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import images from '../../assets/images';
 import {SIZES, COLORS} from '../constants/theme';
-import {LogoWhite} from '../../components';
+import {Button, IAgree, Link, LogoWhite} from '../../components';
 
 export default function LandingPage() {
   return (
@@ -14,6 +14,11 @@ export default function LandingPage() {
       resizeMode="contain">
       <LinearGradient style={styles.innerContainer} colors={COLORS.gradient}>
         <LogoWhite />
+        <View style={styles.bottomContainer}>
+          <IAgree color={COLORS.white} />
+          <Button label={'Create account'} />
+          <Link text={'Log In'} color={COLORS.white} />
+        </View>
       </LinearGradient>
     </ImageBackground>
   );
@@ -29,5 +34,12 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: SIZES.height * 0.2,
     alignItems: 'center',
+  },
+  bottomContainer: {
+    height: SIZES.height * 0.25,
+    width: SIZES.width,
+    position: 'absolute',
+    bottom: 0, // Set bottom to 0
+    alignSelf: 'baseline',
   },
 });
