@@ -2,12 +2,14 @@ import {Text, Pressable, StyleSheet} from 'react-native';
 import React from 'react';
 import {COLORS, SIZES} from '../../constants/theme';
 
-export default function Button({label, disabled, onPress}) {
+export default function Button({label, disabled, onPress, style}) {
   return (
     <Pressable
       onPress={onPress}
       style={({pressed}) =>
-        pressed || disabled ? styles.pressedContainer : styles.container
+        pressed || disabled
+          ? [styles.pressedContainer, style]
+          : [styles.container, style]
       }
       disabled={disabled}>
       <Text style={styles.label}>{label}</Text>
