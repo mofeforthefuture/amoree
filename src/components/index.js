@@ -5,6 +5,7 @@ export {default as Link} from './basic/link';
 //authentication
 export {default as IAgree} from './authentication/i-agree';
 export {default as PhoneInput} from './authentication/phone-input';
+export {default as Country} from './authentication/country';
 
 //layout
 export {default as Base} from './layout/base';

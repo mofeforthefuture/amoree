@@ -1,4 +1,4 @@
-const allTimeZone = [
+export const allCountries = [
   {
     Name: 'Afghanistan',
     Code: 'AF',

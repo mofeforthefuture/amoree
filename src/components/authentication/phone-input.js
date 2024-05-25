@@ -6,17 +6,40 @@ import {
   Image,
   Text,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 
 import {COLORS, SIZES} from '../../screens/constants/theme';
 import icons from '../../assets/icons';
+import {useNavigation} from '@react-navigation/native';
+
+const FLAG_CDN_URL = 'https://flagcdn.com/w80/';
+const FORMAT = '.png';
 
 export default function PhoneInputComp() {
+  const [value, setValue] = useState({
+    Code: 'NG',
+    MobileCode: '+234',
+    Name: 'Nigeria',
+    Timezone: 'W. Central Africa Standard Time',
+    UTC: 'UTC+01:00',
+  });
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Pressable style={styles.flagContainer}>
-        <View style={styles.flag}></View>
-        <Text>+1</Text>
+      <Pressable
+        onPress={() =>
+          navigation.navigate('CountryList', {
+            onGoBack: data => {
+              setValue(data);
+            },
+          })
+        }
+        style={styles.flagContainer}>
+        <Image
+          style={styles.flag}
+          source={{uri: FLAG_CDN_URL + value.Code.toLocaleLowerCase() + FORMAT}}
+        />
+        <Text>{value.MobileCode}</Text>
         <Image source={icons.carretDown} style={styles.carretDown} />
       </Pressable>
       <TextInput
