@@ -1,5 +1,7 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, View} from 'react-native';
+
+import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import images from '../../assets/images';
@@ -7,6 +9,7 @@ import {SIZES, COLORS} from '../constants/theme';
 import {Button, IAgree, Link, LogoWhite} from '../../components';
 
 export default function LandingPage() {
+  const navigation = useNavigation();
   return (
     <ImageBackground
       style={styles.image}
@@ -16,7 +19,10 @@ export default function LandingPage() {
         <LogoWhite />
         <View style={styles.bottomContainer}>
           <IAgree color={COLORS.white} />
-          <Button label={'Create account'} />
+          <Button
+            label={'Create account'}
+            onPress={() => navigation.navigate('Signup')}
+          />
           <Link text={'Log In'} color={COLORS.white} />
         </View>
       </LinearGradient>

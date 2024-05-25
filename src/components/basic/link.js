@@ -1,9 +1,9 @@
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import React from 'react';
 
-export default function Link({text, color}) {
+export default function Link({text, color, onPress}) {
   return (
-    <Pressable>
+    <Pressable onPress={onPress}>
       <Text style={[styles.text, {color}]}>{text}</Text>
     </Pressable>
   );

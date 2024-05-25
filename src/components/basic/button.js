@@ -5,6 +5,7 @@ import {COLORS, SIZES} from '../../screens/constants/theme';
 export default function Button({label, disabled, onPress}) {
   return (
     <Pressable
+      onPress={onPress}
       style={({pressed}) =>
         pressed || disabled ? styles.pressedContainer : styles.container
       }

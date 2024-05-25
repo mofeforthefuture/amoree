@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SplashScreen from 'react-native-splash-screen';
-import {LandingPage} from './src/screens';
+import {LandingPage, Login, Signup} from './src/screens';
 
 const {Navigator, Screen} = createNativeStackNavigator();
 
@@ -18,6 +18,8 @@ export default function App() {
         screenOptions={{headerShown: false}}
         initialRouteName="LandingPage">
         <Screen name="LandingPage" component={LandingPage} />
+        <Screen name="Login" component={Login} />
+        <Screen name="Signup" component={Signup} />
       </Navigator>
     </NavigationContainer>
   );
