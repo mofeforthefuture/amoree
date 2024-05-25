@@ -1,6 +1,6 @@
 import {Text, Pressable, StyleSheet} from 'react-native';
 import React from 'react';
-import {COLORS, SIZES} from '../../screens/constants/theme';
+import {COLORS, SIZES} from '../../constants/theme';
 
 export default function Button({label, disabled, onPress}) {
   return (

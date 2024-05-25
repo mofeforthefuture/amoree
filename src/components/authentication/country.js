@@ -1,6 +1,6 @@
 import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {COLORS, SIZES} from '../../screens/constants/theme';
+import {COLORS, SIZES} from '../../constants/theme';
 
 const FLAG_CDN_URL = 'https://flagcdn.com/w80/';
 const FORMAT = '.png';

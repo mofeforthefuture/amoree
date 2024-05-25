@@ -1,3 +1,4 @@
 const carretDown = require('./carret-down.png');
-
-export default {carretDown};
+const fb = require('./fb.png');
+const apple = require('./apple.png');
+export default {carretDown, fb, apple};

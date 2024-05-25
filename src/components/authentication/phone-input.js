@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 
-import {COLORS, SIZES} from '../../screens/constants/theme';
+import {COLORS, SIZES} from '../../constants/theme';
 import icons from '../../assets/icons';
 import {useNavigation} from '@react-navigation/native';
 

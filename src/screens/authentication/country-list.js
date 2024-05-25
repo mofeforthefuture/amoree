@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import React from 'react';
 import {allCountries} from '../../constants/countries';
-import {SIZES} from '../constants/theme';
+import {SIZES} from '../../constants/theme';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {Country} from '../../components';
 

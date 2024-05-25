@@ -1,7 +1,7 @@
 import {View, StyleSheet, SafeAreaView} from 'react-native';
 import React from 'react';
 
-import {COLORS, SIZES} from '../../screens/constants/theme';
+import {COLORS, SIZES} from '../../constants/theme';
 import LinearGradient from 'react-native-linear-gradient';
 
 export default function Base({children, padding}) {

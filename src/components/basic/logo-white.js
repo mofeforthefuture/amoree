@@ -1,6 +1,6 @@
 import {View, StyleSheet, Image, Text} from 'react-native';
 import React from 'react';
-import {COLORS, SIZES} from '../../screens/constants/theme';
+import {COLORS, SIZES} from '../../constants/theme';
 import images from '../../assets/images';
 
 export default function LogoWhite() {

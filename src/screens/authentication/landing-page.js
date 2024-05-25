@@ -5,7 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import images from '../../assets/images';
-import {SIZES, COLORS} from '../constants/theme';
+import {SIZES, COLORS} from '../../constants/theme';
 import {Button, IAgree, Link, LogoWhite} from '../../components';
 
 export default function LandingPage() {
