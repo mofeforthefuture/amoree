@@ -1,6 +1,8 @@
 export {default as LogoWhite} from './basic/logo-white';
 export {default as Button} from './basic/button';
 export {default as Link} from './basic/link';
+export {default as Loader} from './basic/loader';
+export {default as Repository} from './basic/repository';
 
 //authentication
 export {default as IAgree} from './authentication/i-agree';
