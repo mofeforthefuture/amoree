@@ -1,38 +1,49 @@
-import {View, Text, SafeAreaView, Image, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  FlatList,
+  RefreshControl,
+} from 'react-native';
 import React from 'react';
-import {useRoute} from '@react-navigation/native';
 import {useQuery} from '@apollo/client';
 import {GET_REPOSITORIES} from '../../apis/graphqlQueries';
 import {Loader, Repository} from '../../components';
+import {useRoute} from '@react-navigation/native';
 
 export default function Dashboard() {
   const params = useRoute().params;
   const {user} = JSON.parse(params.user);
 
-  const {loading, error, data} = useQuery(GET_REPOSITORIES, {
-    variables: {
-      owner: 'mofeforthefuture',
-      name: 'cityrefill-client',
-    },
+  const {data, loading, error, refetch} = useQuery(GET_REPOSITORIES, {
+    variables: {owner: 'mofeforthefuture', name: 'cityrefill-client'},
   });
 
-  const DATA = data.viewer.repositories.edges;
+  const repositories = data?.viewer?.repositories?.edges || [];
+
   return (
-    <View>
+    <View style={{alignItems: 'center'}}>
       <SafeAreaView />
       <Image
-        source={{uri: user.photo}}
+        source={{uri: user?.photo}}
         style={{width: 60, height: 60, borderRadius: 30}}
       />
-      <Text>name: {user.name}</Text>
-      <Text>name: {user.email}</Text>
+      <Text style={{marginVertical: 20}}>name: {user?.name}</Text>
+      <Text>email: {user?.email}</Text>
 
       <Loader loading={loading} />
 
-      <FlatList
-        data={DATA}
-        renderItem={({item, index}) => <Repository item={item} key={index} />}
-      />
+      {error ? (
+        <Text style={{color: 'red'}}>Error: {error.message}</Text>
+      ) : (
+        <FlatList
+          data={repositories}
+          renderItem={({item, index}) => <Repository item={item} key={index} />}
+          onRefresh={() => refetch()}
+          refreshing={loading}
+        />
+      )}
     </View>
   );
 }
